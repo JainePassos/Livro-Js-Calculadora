@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScripit Loan Calculeter</title>
+    <style>
+        .output{font-weight: bold;} /*letra dentro do input ficara em negrito*/
+        #payment{text-decoration: underline;}
+        #graph {border:solid blue 1px;}
+        th, td{vertical-align: top;}
+        
+    </style>
+</head>
+<body>
+    <table>
+        <tr><th>Enter Loan Data:</th>
+            <td></td>
+            <th>Loan Balance,Cumulative Equity,and Interest Payments</th></tr>
+        <tr><td>Amount of the loan($):</td>
+            <td><input id="amount" onchange="calculete();"></td>
+            <td rowspan=8>
+                <canvas id="graph" width="400" height="250"></canvas></td></tr>
+        <tr><td>Annual interest (%): </td>
+            <td><input id="apr" onchange="calculete();"></td>
+        </tr>
+        <tr><td>Repayment period (years):</td>
+            <td><input id="years" onchange="calculete();"></td>
+        <tr><td>Zipcode(to find lenders):</td>
+             <td><input id="Zipcode" onchange="calculete();"></td>
+        <tr><th>Approximate Paymants:</th>
+             <td><button onclick="calculete();">Calculete</button></td></tr>
+        <tr><td>Monthly payment</td>
+           <td>$<span class="output" id="payment"></span></td>
+        </tr>
+        <tr><td>Total payment</td>
+            <td>$<span class="output" id="total"></span></td>
+        </tr>
+        <tr><td>Total interest</td>
+            <td>$<span class="output" id="totalinterest"></span></td>
+       </tr>
+       <tr><th>Sponsors:</th><td colspan=2>Aplly for your loan with one of  these fine lenders:
+      <div id="lenders"></div></td></tr>
+
+    </table>
+</body>
+</html>
